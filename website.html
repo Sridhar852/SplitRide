@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimize Everything - Smart Transportation Revolution</title>
+    <meta name="description" content="Revolutionary rideshare platform powered by smart contracts. Optimize transportation for riders, operators, and companies with real-time contract trading.">
+    <meta name="keywords" content="rideshare, smart contracts, transportation, optimization, blockchain, mobility">
+    <meta name="author" content="Optimize Everything">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opteverything.com/">
+    <meta property="og:title" content="Optimize Everything - Smart Transportation Revolution">
+    <meta property="og:description" content="Revolutionary rideshare platform powered by smart contracts. Join the beta and get $100 in ride credits.">
+    <meta property="og:image" content="https://opteverything.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Optimize Everything - Smart Transportation Revolution">
+    <meta property="twitter:description" content="Revolutionary rideshare platform powered by smart contracts. Join the beta and get $100 in ride credits.">
+    <meta property="twitter:image" content="https://opteverything.com/og-image.jpg">
+    
+    <!-- SEO & Technical -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#667eea">
+    <link rel="canonical" href="https://opteverything.com/">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://app.opteverything.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-blue: #667eea;
+            --primary-purple: #764ba2;
+            --success-green: #10b981;
+            --warning-yellow: #f59e0b;
+            --error-red: #ef4444;
+        }
+
+        /* Core animations with better performance */
+        @keyframes float {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -20px, 0); }
+        }
+        
+        @keyframes slideUp {
+            0% { 
+                transform: translate3d(0, 50px, 0); 
+                opacity: 0; 
+            }
+            100% { 
+                transform: translate3d(0, 0, 0); 
+                opacity: 1; 
+            }
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Animation classes */
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+            will-change: transform;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            will-change: transform, opacity;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            will-change: opacity;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse-slow 3s ease-in-out infinite;
+            will-change: opacity;
+        }
+
+        /* Core design system */
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 100%);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            will-change: backdrop-filter;
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0),
+                radial-gradient(circle at 75px 75px, rgba(255,255,255,0.05) 2px, transparent 0);
+            background-size: 100px 100px;
+        }
+
+        /* Enhanced component styles */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        /* Button system */
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Form system */
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .form-input.error {
+            border-color: var(--error-red);
+            background: #fef2f2;
+        }
+        
+        .form-input.success {
+            border-color: var(--success-green);
+            background: #f0fdf4;
+        }
+
+        /* Utility classes */
+        .spinner {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 2px solid #ffffff;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        
+        .loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: rgba(34, 197, 94, 0.1);
+            color: rgb(22, 163, 74);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        /* Modal system */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 28rem;
+            width: 100%;
+            margin: 1rem;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .hero-card {
+                padding: 1rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-float,
+            .animate-slide-up,
+            .animate-fade-in,
+            .animate-pulse-slow {
+                animation: none;
+            }
+            
+            .feature-card:hover,
+            .hero-card:hover,
+            .btn:hover {
+                transform: none;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .glass-effect {
+                background: rgba(255, 255, 255, 0.9);
+                border: 2px solid rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        /* Focus indicators */
+        .btn:focus-visible,
+        .form-input:focus-visible {
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+
+        /* Loading states */
+        .btn.loading {
+            cursor: not-allowed;
+        }
+
+        .btn.loading .spinner {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50">
+        Skip to main content
+    </a>
+
+    <!-- Floating CTA -->
+    <div class="fixed bottom-6 right-6 z-40" id="floating-cta">
+        <a href="https://app.opteverything.com/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-primary rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110"
+           aria-label="Try Beta App">
+            <span class="font-semibold">Try Beta</span>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Beta Signup Modal -->
+    <div id="beta-modal" class="modal-overlay hidden" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modal-title" class="text-2xl font-bold text-gray-900">Join Beta Program</h2>
+                <button id="close-modal" 
+                        class="text-gray-400 hover:text-gray-600 transition-colors p-1"
+                        aria-label="Close modal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <form id="beta-form" class="space-y-6" novalidate>
+                <div class="space-y-1">
+                    <label for="email" class="block text-sm font-semibold text-gray-700">Email Address</label>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           class="form-input" 
+                           placeholder="your@email.com" 
+                           required 
+                           autocomplete="email"
+                           aria-describedby="email-error">
+                    <div id="email-error" class="text-red-600 text-sm hidden" role="alert"></div>
+                </div>
+                
+                <div class="space-y-1">
+                    <label for="name" class="block text-sm font-semibold text-gray-700">Full Name</label>
+                    <input type="text" 
+                           id="name" 
+                           name="name" 
+                           class="form-input" 
+                           placeholder="John Doe" 
+                           required 
+                           autocomplete="name"
+                           aria-describedby="name-error">
+                    <div id="name-error" class="text-red-600 text-sm hidden" role="alert"></div>
+                </div>
+                
+                <div class="space-y-1">
+                    <label for="user-type" class="block text-sm font-semibold text-gray-700">I am a...</label>
+                    <select id="user-type" 
+                            name="userType" 
+                            class="form-input" 
+                            required
+                            aria-describedby="user-type-error">
+                        <option value="">Select your role</option>
+                        <option value="rider">Rider (Looking for better transportation)</option>
+                        <option value="operator">Operator (Want to provide rides)</option>
+                        <option value="company">Company (Transportation business)</option>
+                        <option value="investor">Investor (Interested in funding)</option>
+                    </select>
+                    <div id="user-type-error" class="text-red-600 text-sm hidden" role="alert"></div>
+                </div>
+                
+                <div class="space-y-1">
+                    <label for="city" class="block text-sm font-semibold text-gray-700">City</label>
+                    <input type="text" 
+                           id="city" 
+                           name="city" 
+                           class="form-input" 
+                           placeholder="San Francisco" 
+                           required 
+                           autocomplete="address-level2"
+                           aria-describedby="city-error">
+                    <div id="city-error" class="text-red-600 text-sm hidden" role="alert"></div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                    <input type="checkbox" 
+                           id="terms" 
+                           name="terms" 
+                           class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" 
+                           required
+                           aria-describedby="terms-error">
+                    <label for="terms" class="text-sm text-gray-600">
+                        I agree to the <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>
+                    </label>
+                </div>
+                <div id="terms-error" class="text-red-600 text-sm hidden" role="alert"></div>
+                
+                <button type="submit" 
+                        id="submit-btn" 
+                        class="w-full btn btn-primary">
+                    <span id="submit-text">Get $100 Credit</span>
+                    <div id="submit-spinner" class="spinner hidden"></div>
+                </button>
+                
+                <div id="form-success" class="text-green-600 text-sm hidden" role="alert">
+                    🎉 Welcome to the beta! Check your email for next steps.
+                </div>
+                
+                <div id="form-error" class="text-red-600 text-sm hidden" role="alert">
+                    Something went wrong. Please try again or contact support.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-30 glass-effect border-b border-white/10" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-black">Optimize Everything</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#riders" class="text-black/80 hover:text-black transition-colors">Riders</a>
+                    <a href="#operators" class="text-black/80 hover:text-black transition-colors">Operators</a>
+                    <a href="#companies" class="text-black/80 hover:text-black transition-colors">Companies</a>
+                    <a href="#investors" class="text-black/80 hover:text-black transition-colors">Investors</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://app.opteverything.com/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn btn-primary text-base px-6 py-2">
+                        Join Beta
+                    </a>
+                    
+                    <button id="mobile-menu-button" 
+                            class="md:hidden p-2 rounded-lg hover:bg-white/20 transition-colors"
+                            aria-label="Toggle mobile menu"
+                            aria-expanded="false">
+                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-white/20">
+                <div class="px-4 py-6 space-y-4">
+                    <a href="#riders" class="block text-black/80 hover:text-black transition-colors py-2">Riders</a>
+                    <a href="#operators" class="block text-black/80 hover:text-black transition-colors py-2">Operators</a>
+                    <a href="#companies" class="block text-black/80 hover:text-black transition-colors py-2">Companies</a>
+                    <a href="#investors" class="block text-black/80 hover:text-black transition-colors py-2">Investors</a>
+                    <div class="pt-4 border-t border-white/20">
+                        <a href="https://app.opteverything.com/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="btn btn-primary w-full text-center">
+                            Join Beta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex flex-col justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white hero-pattern">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-white animate-slide-up">
+                        <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                            Revolutionizing
+                            <span class="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                                Transportation
+                            </span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
+                            A smarter rideshare experience powered by smart contracts. Imagine a future where everyone gets where they need to go in the most efficient way possible.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="btn btn-primary bg-white text-purple-700 hover:bg-gray-100" id="hero-cta-primary">
+                                Get $100 Credit
+                            </button>
+                            <button class="btn btn-secondary" id="hero-cta-secondary">
+                                See How It Works
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="relative animate-float">
+                        <!-- Enhanced UI Cards -->
+                        <div class="space-y-4 lg:space-y-0">
+                            <!-- Desktop floating cards -->
+                            <div class="hidden lg:block absolute -top-8 -left-8 w-80 h-64">
+                                <div class="hero-card animate-pulse-slow">
+                                    <div class="text-white p-6">
+                                        <div class="flex items-center justify-between mb-4">
+                                            <div class="text-sm opacity-90 font-medium">Live Contract</div>
+                                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                        </div>
+                                        <div class="text-4xl font-bold drop-shadow-lg mb-3">$18.50</div>
+                                        <div class="text-sm opacity-90 mb-4">22 min • 4.9★</div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-medium">Sarah M.</div>
+                                                <div class="text-xs opacity-75">Verified Rider</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mobile stacked cards -->
+                            <div class="lg:hidden space-y-4 mt-8">
+                                <div class="hero-card animate-pulse-slow">
+                                    <div class="text-white">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <div class="text-sm opacity-90 font-medium">Live Contract</div>
+                                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                        </div>
+                                        <div class="text-2xl font-bold drop-shadow-lg mb-2">$18.50</div>
+                                        <div class="text-sm opacity-90">22 min • 4.9★</div>
+                                    </div>
+                                </div>
+                                <div class="hero-card animate-pulse-slow" style="animation-delay: 1s;">
+                                    <div class="text-white">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <div class="text-sm opacity-90 font-medium">Route Optimization</div>
+                                            <div class="w-5 h-5 bg-blue-400 rounded-lg"></div>
+                                        </div>
+                                        <div class="text-xl font-bold drop-shadow-lg mb-2">32% Faster</div>
+                                        <div class="text-sm opacity-90">Multi-leg routing</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="trust-badge mb-4">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                        </svg>
+                        Trusted by 10,000+ users
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                        Improve Transportation For All
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Think of all the vehicles moving around your city right now. Think about all the empty seats and wasted trips, while people wait to get on a crowded bus.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="feature-card">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 000 6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Ride Smarter, Not Harder</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Imagine all those seats filled with passengers, with everyone routing optimally according to their needs and values. Imagine the saved money and time.
+                        </p>
+                        <div class="flex items-center text-blue-600 font-semibold">
+                            <span class="text-sm">Learn more</span>
+                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a3 3 0 003 3h2a3 3 0 003-3V3a2 2 0 012 2v6h-3V8a1 1 0 10-2 0v3H9V8a1 1 0 10-2 0v3H4V5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Contract-based Value Maximization</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            We use smart contracts to match riders and drivers, allowing for multi-leg routing using carpooling and transit. Riders pay what they specify and auction to the highest bidder.
+                        </p>
+                        <div class="flex items-center text-purple-600 font-semibold">
+                            <span class="text-sm">Learn more</span>
+                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-Time Data-Driven Decisions</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Our platform enables algorithmic contract trading, allowing for real-time trip changes. Every contract can be bought, sold, split, or assigned to a new driver at any time.
+                        </p>
+                        <div class="flex items-center text-green-600 font-semibold">
+                            <span class="text-sm">Learn more</span>
+                            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner Sections -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                        We Would Love To Partner With You
+                    </h2>
+                </div>
+
+                <!-- Riders Section -->
+                <div id="riders" class="mb-20">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 hover:shadow-2xl transition-all">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                    For Riders
+                                </div>
+                                <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                                    Earn $100 in Ride Credit
+                                </h3>
+                                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                                    Is taking the bus just not working for you? Are you spending too much money on taxis or Ubers? 
+                                    Optimize Everything is building a smarter, cheaper ride-share app that maximizes value.
+                                </p>
+                                <div class="space-y-4 mb-8">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-700">Get better rides with optimized routes</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-700">No commitment - just enter your schedule</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="text-gray-700">5% off all rides when app launches</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" data-section="riders">
+                                    Submit Your Schedule
+                                </button>
+                            </div>
+                            <div class="relative">
+                                <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 h-80 flex items-center justify-center relative overflow-hidden">
+                                    <div class="absolute inset-0 opacity-10">
+                                        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                                            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                                            <circle cx="80" cy="40" r="1.5" fill="currentColor"/>
+                                            <circle cx="40" cy="80" r="2.5" fill="currentColor"/>
+                                            <circle cx="70" cy="70" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-center relative z-10">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                                <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="text-2xl font-bold text-gray-800 mb-2">Smart Ride Matching</div>
+                                        <div class="text-gray-600">Optimized for your schedule</div>
+                                        <div class="mt-4 flex items-center justify-center space-x-2 text-sm text-gray-500">
+                                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                            <span>Live matching</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operators Section -->
+                <div id="operators" class="mb-20">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 hover:shadow-2xl transition-all">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div class="order-2 lg:order-1 relative">
+                                <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8 h-80 flex items-center justify-center relative overflow-hidden">
+                                    <div class="absolute inset-0 opacity-10">
+                                        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                                            <path d="M20 20 L80 20 L80 80 L20 80 Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                                            <path d="M30 30 L70 30 L70 70 L30 70 Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                                        </svg>
+                                    </div>
+                                    <div class="text-center relative z-10">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="text-2xl font-bold text-gray-800 mb-2">Smart Carpooling</div>
+                                        <div class="text-gray-600">Get compensated for your time</div>
+                                        <div class="mt-4 flex items-center justify-center space-x-2 text-sm text-gray-500">
+                                            <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                                            <span>Active network</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-1 lg:order-2">
+                                <div class="inline-block bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                    For Operators
+                                </div>
+                                <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                                    Help Us Build Smarter Carpooling
+                                </h3>
+                                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                                    Do you want to carpool, but are worried about being given routes that do not work for your commute? 
+                                    We're creating a scheduling app for carpool operators designed to make coordinating shared rides easier and more efficient.
+                                </p>
+                                <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 mb-8">
+                                    <p class="text-purple-700 font-medium">
+                                        Our contract-based approach ensures you get where you need to go while being compensated for your time.
+                                    </p>
+                                </div>
+                                <button class="btn btn-primary bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" data-section="operators">
+                                    Get $100 Credit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Companies Section -->
+                <div id="companies" class="mb-20">
+                    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 hover:shadow-2xl transition-all">
+                        <div class="text-center mb-12">
+                            <div class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                For Ride Sharing Companies
+                            </div>
+                            <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                                Empower Your Platform with Smart Optimization
+                            </h3>
+                            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                                Access our optimized transportation contract trading network through an easy-to-use API. 
+                                Achieve greater efficiency, revenue, and rider satisfaction.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="text-center p-6 bg-green-50 rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-1">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-900 mb-2">More Efficiency</h4>
+                                <p class="text-sm text-gray-600">Fewer empty seats, higher utilization</p>
+                            </div>
+                            <div class="text-center p-6 bg-blue-50 rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-1">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                        <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-900 mb-2">Higher Earnings</h4>
+                                <p class="text-sm text-gray-600">Intelligent routing increases driver income</p>
+                            </div>
+                            <div class="text-center p-6 bg-purple-50 rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-1">
+                                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-900 mb-2">Faster Trips</h4>
+                                <p class="text-sm text-gray-600">Optimized routes based on real-time demand</p>
+                            </div>
+                            <div class="text-center p-6 bg-orange-50 rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-1">
+                                <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="font-bold text-gray-900 mb-2">API Integration</h4>
+                                <p class="text-sm text-gray-600">Easy integration without tech stack overhaul</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-12">
+                            <button class="btn btn-primary bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700" data-section="companies">
+                                Partner With Us
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investors Section -->
+                <div id="investors" class="mb-20">
+                    <div class="bg-gradient-to-br from-gray-900 to-purple-900 rounded-3xl shadow-xl p-8 lg:p-12 text-white">
+                        <div class="text-center mb-12">
+                            <div class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                For Investors
+                            </div>
+                            <h3 class="text-3xl lg:text-4xl font-bold mb-6">
+                                Investment Opportunity
+                            </h3>
+                            <p class="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
+                                Join us in building the world's first fully dynamic transportation economy - one smart contract at a time.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                            <div class="glass-effect rounded-xl p-6">
+                                <h4 class="text-xl font-bold mb-4">How It Works</h4>
+                                <ul class="space-y-2 text-white/80">
+                                    <li>• Riders submit value-based contracts</li>
+                                    <li>• Drivers and algorithms bid in real-time</li>
+                                    <li>• Contracts can be traded mid-route</li>
+                                </ul>
+                            </div>
+                            <div class="glass-effect rounded-xl p-6">
+                                <h4 class="text-xl font-bold mb-4">Why It Matters</h4>
+                                <ul class="space-y-2 text-white/80">
+                                    <li>• Optimizes for value, not just speed</li>
+                                    <li>• Open competition drives better outcomes</li>
+                                    <li>• Scales across all transportation modes</li>
+                                </ul>
+                            </div>
+                            <div class="glass-effect rounded-xl p-6">
+                                <h4 class="text-xl font-bold mb-4">Market Opportunity</h4>
+                                <ul class="space-y-2 text-white/80">
+                                    <li>• $150B+ transportation market</li>
+                                    <li>• Network effects create moat</li>
+                                    <li>• API-first approach enables rapid scaling</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary bg-white text-gray-900 hover:bg-gray-100 shadow-xl" data-section="investors">
+                                Request Pitch Deck
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold">Optimize Everything</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Building the future of transportation through smart contracts and algorithmic optimization. 
+                        Join us in creating a more efficient world.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors" aria-label="Twitter">
+                            <span class="text-sm font-bold">tw</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors" aria-label="LinkedIn">
+                            <span class="text-sm font-bold">li</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">How it Works</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Beta Access</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Optimize Everything. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // App State Management
+        class AppState {
+            constructor() {
+                this.isModalOpen = false;
+                this.isMobileMenuOpen = false;
+                this.formSubmitting = false;
+            }
+        }
+
+        const appState = new AppState();
+
+        // Utility Functions
+        const utils = {
+            // Debounce function for performance optimization
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            },
+
+            // Throttle function for scroll events
+            throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            },
+
+            // Smooth scroll to element
+            smoothScrollTo(targetId) {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            },
+
+            // Email validation
+            validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            },
+
+            // Name validation
+            validateName(name) {
+                return name.trim().length >= 2;
+            },
+
+            // City validation
+            validateCity(city) {
+                return city.trim().length >= 2;
+            }
+        };
+
+        // Modal Management
+        const modalManager = {
+            open() {
+                const modal = document.getElementById('beta-modal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                    appState.isModalOpen = true;
+                    
+                    // Focus on first input for accessibility
+                    const firstInput = modal.querySelector('input');
+                    if (firstInput) {
+                        setTimeout(() => firstInput.focus(), 100);
+                    }
+                }
+            },
+
+            close() {
+                const modal = document.getElementById('beta-modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                    appState.isModalOpen = false;
+                    this.clearForm();
+                }
+            },
+
+            clearForm() {
+                const form = document.getElementById('beta-form');
+                if (form) {
+                    form.reset();
+                    this.clearAllErrors();
+                }
+            },
+
+            clearAllErrors() {
+                document.querySelectorAll('.text-red-600').forEach(el => {
+                    if (el.id.includes('error')) {
+                        el.classList.add('hidden');
+                    }
+                });
+                document.querySelectorAll('.form-input').forEach(el => {
+                    el.classList.remove('error', 'success');
+                });
+                document.getElementById('form-error')?.classList.add('hidden');
+                document.getElementById('form-success')?.classList.add('hidden');
+            }
+        };
+
+        // Mobile Menu Management
+        const mobileMenuManager = {
+            toggle() {
+                const menu = document.getElementById('mobile-menu');
+                const button = document.getElementById('mobile-menu-button');
+                
+                if (menu && button) {
+                    const isOpen = !menu.classList.contains('hidden');
+                    
+                    if (isOpen) {
+                        this.close();
+                    } else {
+                        this.open();
+                    }
+                }
+            },
+
+            open() {
+                const menu = document.getElementById('mobile-menu');
+                const button = document.getElementById('mobile-menu-button');
+                
+                if (menu && button) {
+                    menu.classList.remove('hidden');
+                    button.setAttribute('aria-expanded', 'true');
+                    appState.isMobileMenuOpen = true;
+                    
+                    // Update icon
+                    const icon = button.querySelector('svg');
+                    if (icon) {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+                    }
+                }
+            },
+
+            close() {
+                const menu = document.getElementById('mobile-menu');
+                const button = document.getElementById('mobile-menu-button');
+                
+                if (menu && button) {
+                    menu.classList.add('hidden');
+                    button.setAttribute('aria-expanded', 'false');
+                    appState.isMobileMenuOpen = false;
+                    
+                    // Update icon
+                    const icon = button.querySelector('svg');
+                    if (icon) {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                    }
+                }
+            }
+        };
+
+        // Form Validation
+        const formValidator = {
+            showError(fieldId, message) {
+                const field = document.getElementById(fieldId);
+                const errorDiv = document.getElementById(fieldId + '-error');
+                
+                if (field && errorDiv) {
+                    field.classList.add('error');
+                    field.classList.remove('success');
+                    errorDiv.textContent = message;
+                    errorDiv.classList.remove('hidden');
+                }
+            },
+
+            showSuccess(fieldId) {
+                const field = document.getElementById(fieldId);
+                const errorDiv = document.getElementById(fieldId + '-error');
+                
+                if (field && errorDiv) {
+                    field.classList.add('success');
+                    field.classList.remove('error');
+                    errorDiv.classList.add('hidden');
+                }
+            },
+
+            validateField(fieldId, value, validationFn, errorMessage) {
+                if (!validationFn(value)) {
+                    this.showError(fieldId, errorMessage);
+                    return false;
+                } else if (value) {
+                    this.showSuccess(fieldId);
+                    return true;
+                }
+                return true;
+            }
+        };
+
+        // Form Submission
+        const formHandler = {
+            async submitForm(formData) {
+                try {
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Simulate success/failure (80% success rate for demo)
+                    if (Math.random() > 0.2) {
+                        document.getElementById('form-success')?.classList.remove('hidden');
+                        setTimeout(() => {
+                            modalManager.close();
+                        }, 2000);
+                        return true;
+                    } else {
+                        throw new Error('Network error');
+                    }
+                } catch (error) {
+                    document.getElementById('form-error')?.classList.remove('hidden');
+                    return false;
+                }
+            },
+
+            setLoadingState(isLoading) {
+                const submitBtn = document.getElementById('submit-btn');
+                const submitText = document.getElementById('submit-text');
+                const submitSpinner = document.getElementById('submit-spinner');
+                
+                if (submitBtn && submitText && submitSpinner) {
+                    if (isLoading) {
+                        submitBtn.classList.add('loading');
+                        submitBtn.disabled = true;
+                        submitText.textContent = 'Signing up...';
+                        submitSpinner.classList.remove('hidden');
+                    } else {
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+                        submitText.textContent = 'Get $100 Credit';
+                        submitSpinner.classList.add('hidden');
+                    }
+                }
+                
+                appState.formSubmitting = isLoading;
+            }
+        };
+
+        // Event Listeners
+        function initializeEventListeners() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    mobileMenuManager.toggle();
+                });
+            }
+
+            // Close mobile menu on link clicks
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuManager.close();
+                });
+            });
+
+            // Close mobile menu on outside click
+            document.addEventListener('click', (e) => {
+                const menu = document.getElementById('mobile-menu');
+                const button = document.getElementById('mobile-menu-button');
+                
+                if (appState.isMobileMenuOpen && 
+                    menu && button &&
+                    !menu.contains(e.target) && 
+                    !button.contains(e.target)) {
+                    mobileMenuManager.close();
+                }
+            });
+
+            // Modal controls
+            const closeModalBtn = document.getElementById('close-modal');
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', modalManager.close);
+            }
+
+            // Close modal on overlay click
+            const modal = document.getElementById('beta-modal');
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modalManager.close();
+                    }
+                });
+            }
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && appState.isModalOpen) {
+                    modalManager.close();
+                }
+            });
+
+            // CTA button handlers
+            document.addEventListener('click', (e) => {
+                if (e.target.matches('button[data-section]') || 
+                    e.target.closest('button[data-section]') ||
+                    e.target.id === 'hero-cta-primary') {
+                    e.preventDefault();
+                    modalManager.open();
+                }
+            });
+
+            // Form submission
+            const betaForm = document.getElementById('beta-form');
+            if (betaForm) {
+                betaForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    if (appState.formSubmitting) return;
+                    
+                    modalManager.clearAllErrors();
+                    
+                    const formData = new FormData(betaForm);
+                    const email = formData.get('email');
+                    const name = formData.get('name');
+                    const userType = formData.get('userType');
+                    const city = formData.get('city');
+                    const terms = formData.get('terms');
+                    
+                    let isValid = true;
+                    
+                    // Validate all fields
+                    if (!formValidator.validateField('email', email, utils.validateEmail, 'Please enter a valid email address')) {
+                        isValid = false;
+                    }
+                    
+                    if (!formValidator.validateField('name', name, utils.validateName, 'Name must be at least 2 characters')) {
+                        isValid = false;
+                    }
+                    
+                    if (!userType) {
+                        formValidator.showError('user-type', 'Please select your role');
+                        isValid = false;
+                    } else {
+                        formValidator.showSuccess('user-type');
+                    }
+                    
+                    if (!formValidator.validateField('city', city, utils.validateCity, 'Please enter a valid city')) {
+                        isValid = false;
+                    }
+                    
+                    if (!terms) {
+                        formValidator.showError('terms', 'You must agree to the terms and conditions');
+                        isValid = false;
+                    }
+                    
+                    if (isValid) {
+                        formHandler.setLoadingState(true);
+                        await formHandler.submitForm(formData);
+                        formHandler.setLoadingState(false);
+                    }
+                });
+            }
+
+            // Real-time field validation
+            const emailField = document.getElementById('email');
+            if (emailField) {
+                emailField.addEventListener('blur', (e) => {
+                    if (e.target.value) {
+                        formValidator.validateField('email', e.target.value, utils.validateEmail, 'Please enter a valid email address');
+                    }
+                });
+            }
+
+            const nameField = document.getElementById('name');
+            if (nameField) {
+                nameField.addEventListener('blur', (e) => {
+                    if (e.target.value) {
+                        formValidator.validateField('name', e.target.value, utils.validateName, 'Name must be at least 2 characters');
+                    }
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    utils.smoothScrollTo(targetId);
+                });
+            });
+        }
+
+        // Scroll Effects
+        function initializeScrollEffects() {
+            const nav = document.querySelector('nav');
+            
+            const handleScroll = utils.throttle(() => {
+                if (nav) {
+                    if (window.scrollY > 100) {
+                        nav.classList.add('backdrop-blur-xl');
+                    } else {
+                        nav.classList.remove('backdrop-blur-xl');
+                    }
+                }
+            }, 10);
+
+            window.addEventListener('scroll', handleScroll);
+        }
+
+        // Intersection Observer for animations
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('section > div, .feature-card').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeEventListeners();
+            initializeScrollEffects();
+            initializeAnimations();
+        });
+
+        // Handle window load for any missed initializations
+        window.addEventListener('load', () => {
+            // Ensure all critical elements are properly initialized
+            if (!document.getElementById('mobile-menu-button').hasEventListener) {
+                initializeEventListeners();
+            }
+        });
+
+        // Error boundary for graceful degradation
+        window.addEventListener('error', (e) => {
+            console.error('Application error:', e.error);
+            // Graceful degradation - ensure basic functionality still works
+        });
+    </script>
+</body>
+</html>
